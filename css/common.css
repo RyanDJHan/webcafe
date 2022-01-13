@@ -1,0 +1,352 @@
+@charset "utf-8";
+/* 초기화 */
+html, body, div, header, nav, section, aside, article, footer, figure, figcaption, 
+fieldset, legend, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+fieldset {
+    border: 0;
+}
+a:link {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+a:visited {
+    color: #8e8e91;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #f00;
+    text-decoration: none;
+}
+
+
+/* 숨김 콘텐츠 */
+.hidden, legend, caption {
+    position: absolute;
+    left: -9999em;
+}
+
+/* 웹 폰트 */
+@font-face {
+    font-family: 'Nanum';
+    font-weight: 400;
+    src: url('font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothic.woff') format('woff'),
+         url('font/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBold';
+    font-weight: 600;
+    src: url('font/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothicBold.woff') format('woff'),
+         url('font/NanumGothicBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumEX';
+    font-weight: 900;
+    src: url('font/NanumGothicExtraBold.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothicExtraBold.woff') format('woff'),
+         url('font/NanumGothicExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'webcafeIcon';
+    font-weight: 400;
+    src: url('font/webcafeIcon.eot?#iefix') format('embedded-opentype'),
+         url('font/webcafeIcon.woff') format('woff'),
+         url('font/webcafeIcon.ttf') format('truetype'),
+         url('font/webcafeIcon.svg#webcaferegular') format('svg');
+}
+
+/* 건너뛰기 링크 */
+#skipNav {
+    position: absolute;
+    left: -9999em;
+}
+#skipNav:focus {
+    left: 0;
+    padding: 5px;
+    color: #fff;
+    background-color: #000;
+    z-index: 10;
+    outline: 0;
+}
+
+/* 기본 스타일 */
+body {
+    color: #000;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 1.2;
+    font-family: 'Nanum';
+}
+#wrapper {
+    background-color: #fff;
+    background-image: url(images/bg_flower.png),
+    linear-gradient(to bottom, #c7c7c7 0%, #fff 70%, #fff 100%);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+header, #visual, #contentsArea, #slogan, #footerInner {
+    width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+/* 헤더 영역 */
+header {
+    position: relative;
+    height: 110px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+    padding: 0 30px;
+}
+.logo {
+    position: absolute;
+    top: 37px;
+    left: 60px;
+}
+.infoLink {
+    text-align: right;
+}
+.infoLink li {
+    display: inline-block;
+    padding: 8px 0 7px 3px;
+}
+.infoLink a::before {
+    content: ":";
+    padding-right: 8px;
+}
+.infoLink li:first-child a::before {
+    content: "";
+}
+.mainMenu {
+    border-top: 2px solid #000;
+    background-image: linear-gradient(to bottom, #ffc848 0%, #ff8208 40%, #ff8208 60%, #ffc848 100%);
+    height: 45px;
+    padding-left: 225px;
+    border-radius: 0 0 5px 5px;
+}
+.mainMenu li {
+    position: relative;
+}
+.mainMenu ul {
+    position: absolute;
+    z-index: 10;
+    white-space: nowrap;
+}
+.mainMenu ul a {
+    padding: 8px 0 7px 15px;
+}
+.mainMenu ul a::before {
+    font-family: 'webcafeIcon';
+    content: "r";
+    color: #666;
+    position: relative;
+    top: 2px;
+}
+.mainMenu ul a:hover::before, .mainMenu ul a:focus::before {
+    content: "c";
+    color: #f00;
+}
+.mainMenu > li:hover ul {
+    display: block;
+}
+.aboutHTML {
+    display: none;
+}
+.aboutCSS {
+    display: none;
+}
+.webStandard {
+    display: none;
+}
+.webAccessibility {
+    display: none;
+    left: -100px;
+}
+.qna {
+    display: none;
+    left: -150px;
+}
+.archive {
+    display: none;
+    right: 0;
+}
+.mainMenu li, .mainMenu a {
+    display: inline-block;
+}
+.mainMenu > li > a {
+    font-family: 'NanumEx';
+    font-size: 1.17em;
+    letter-spacing: 1px;
+    padding: 15px 20px 14px;
+    color: #fff;
+    border-left: 1px solid #fff;
+    text-shadow: 1px 0 rgba(0, 0, 0, 0.2),
+                -1px 0 rgba(0, 0, 0, 0.2),
+                0 1px rgba(0, 0, 0, 0.2),
+                0 -1px rgba(0, 0, 0, 0.2);
+}
+.mainMenu > li > a:hover, .mainMenu > li > a:focus {
+    color: #ff0;
+}
+.mainMenu > li > a:hover::after, .mainMenu > li > a:focus::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+    top: 12px;
+}
+@keyframes textAni {
+    0% {
+        font-size: 1em;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+    100% {
+        font-size: 2em;
+        top: 75px;
+        left: 400px;
+        opacity: 1;
+    }
+}
+@keyframes flowerAni {
+    0% {
+        opacity: 1; /* 불투명 */
+    }
+    100% {
+        opacity: 0; /* 투명 */
+    }
+}
+/* 비주얼 영역 */
+#visual {
+    height: 120px;
+    position: relative;
+}
+#visual p {
+    font-family: Georgia, serif;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 75px;
+    left: 400px;
+    animation: textAni 1s;
+}
+#visual::before, #visual::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    animation: flowerAni 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#visual::before {
+    background-image: url(images/ani_flower_01.png),
+                      url(images/ani_flower_02.png);
+    background-repeat: no-repeat;
+    background-position: 0 5px, 670px 0;
+}
+#visual::after {
+    background-image: url(images/ani_flower_03.png),
+                      url(images/ani_flower_04.png);
+    background-repeat: no-repeat;
+    background-position: 300px 35px, 800px 65px;
+    animation-delay: 1s;
+}
+
+/* 슬로건 영역 */
+#slogan {
+    padding: 15px 0;
+    position: relative;
+}
+#slogan h2 {
+    width: 110px;
+    height: 90px;
+    background: url(images/coffee.png) no-repeat;
+    background-size: 110px 90px;
+    text-indent: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: -25px;
+    left: 30px;
+}
+#slogan p {
+    margin: 0 100px 0 200px;
+    color: #a09784;
+    font-size: 1.08em;
+}
+#slogan q {
+    font-weight: bold;
+}
+#slogan q::before {
+    font-size: 3em;
+    position: relative;
+    top: 15px;
+    left: -5px;
+    color: #765725;
+}
+#slogan q::after {
+    content: "";
+}
+/* 푸터 영역 */
+#footer {
+    padding: 15px 0;
+    background-image: linear-gradient(to bottom, #c7c7c7 0%, #fff 70%, #fff 100%);
+}
+#footerInner {
+    position: relative;
+}
+.guide, address, .copyright {
+    margin-left: 200px;
+    margin-right: 100px;
+}
+.footerLogo {
+    position: absolute;
+    left: 35px;
+    top: 45px;
+}
+.guide {
+    background: #7b8385;
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.guide li {
+    display: inline-block;
+}
+.guide a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 15px 10px 0;
+}
+.guide a::before {
+    content: "|";
+    padding-right: 20px;
+}
+.guide li:first-child a::before {
+    content: "";
+}
+address {
+    font-style: normal;
+    margin-bottom: 5px;
+}
+address span {
+    margin-right: 10px;
+}
+.techLogArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
